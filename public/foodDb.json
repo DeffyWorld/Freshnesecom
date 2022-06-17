@@ -1,11 +1,12 @@
 {
-    "food": [
+    "products": [
         {
             "id": 1,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
             "discount": null
         },
@@ -13,8 +14,9 @@
             "id": 2,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
             "discount": null
         },
@@ -22,17 +24,19 @@
             "id": 3,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
-            "discount": "15%"
+            "discount": 0.15
         },
         {
             "id": 4,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
             "discount": null
         },
@@ -40,17 +44,19 @@
             "id": 5,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
-            "discount": "10%"
+            "discount": 0.10
         },
         {
             "id": 6,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
             "discount": null
         },
@@ -58,8 +64,9 @@
             "id": 7,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
             "discount": null
         },
@@ -67,17 +74,19 @@
             "id": 8,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
-            "discount": "35%"
+            "discount": 0.35
         },
         {
             "id": 9,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
             "discount": null
         },
@@ -85,8 +94,9 @@
             "id": 10,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
             "discount": null
         },
@@ -94,8 +104,9 @@
             "id": 11,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
             "discount": null
         },
@@ -103,8 +114,9 @@
             "id": 12,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
             "discount": null
         },
@@ -112,17 +124,19 @@
             "id": 13,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
-            "discount": "90%"
+            "discount": 0.90
         },
         {
             "id": 14,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
             "discount": null
         },
@@ -130,17 +144,19 @@
             "id": 15,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
-            "discount": "27%"
+            "discount": 0.27
         },
         {
             "id": 16,
             "category": "Fruits and vegetables",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
-            "title": "apple",
+            "title": "Apple",
             "description": "Red, cool, juicy.",
+            "rating": 4.3,
             "price": 0.15,
             "discount": null
         }

@@ -1,0 +1,207 @@
+.categories {
+    min-height: 55px;
+    background: #F9F9F9;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 13px;
+    }
+    &__item {
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size: 1em;
+        color: #151515;
+        cursor: pointer;
+        transition: all 250ms ease;
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+
+
+
+
+.best-selling {
+    min-height: 332px;
+    margin-top: 100px;
+    background: #FFFFFF;
+
+    &__title {
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 1.14em;
+        color: #151515;
+    }
+    &__list {
+        &-item {
+            font-family: 'Open Sans';
+            font-weight: 400;
+            font-size: 14px;
+            color: #6A983C;
+            font-size: 0.88em;
+            text-decoration-line: underline;
+            margin-top: 12.5px;
+        }
+    }
+}
+
+
+
+
+.slider {
+    min-height: 425.5px;
+    background: #FFFFFF;
+
+    &__title {
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 1.13em;
+        color: #151515;
+        margin-top: 130px;
+    }
+}
+
+
+
+
+.mini-blog {
+    min-height: 596px;
+    background: #FFFFFF;
+
+    &__title {
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 1.125em;
+        color: #151515;
+    }
+    &__button {
+        display: flex;
+        align-items: center;
+        margin-top: 3px;
+        margin-left: 58px;
+        transition: all 250ms ease;
+        div {
+            font-weight: 700;
+            font-size: 1em;
+            color: #151515;
+            white-space: nowrap;
+            padding-right: 4px;
+        }
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+
+
+    &-info {
+        display: flex;
+        &__author {
+            font-family: 'Open Sans';
+            font-weight: 400;
+            font-size: 0.75em;
+            color: #FFFFFF;
+            padding-right: 16px;
+        }
+        &__date {
+            font-family: 'Open Sans';
+            font-weight: 400;
+            font-size: 0.75em;
+            color: #FFFFFF;
+        }
+        &--black {
+            display: flex;
+            &__author {
+                font-family: 'Open Sans';
+                font-weight: 400;
+                font-size: 0.75em;
+                padding-right: 16px;
+                color: #151515;
+            }
+            &__date {
+                font-family: 'Open Sans';
+                font-weight: 400;
+                font-size: 0.75em;
+                color: #151515;
+            }
+        }
+    }
+
+    &-main {
+        min-height: 400px;
+        margin-top: 36px;
+
+        &__img {
+            background-image: url(../../../assets/img/joseph-gonzalez.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            min-height: inherit;
+            border-radius: 16px;
+        }
+        &__gradient {
+            background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            min-height: inherit;
+            margin-top: -400px;
+            border-radius: 16px;
+        }
+        &__text-wrapper {
+            margin-top: -130px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        &__title {
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-size: 1.375em;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+        }
+    }
+
+    &-secondary{
+        margin-top: 36px;
+
+        &__img {
+            min-height: 180px;
+            background: #F5F5F5;
+            border-radius: 12px;
+        }
+        &__title {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-size: 1.14em;
+            color: #151515;
+        }
+    }
+
+    &-additional {
+        margin-top: 36px;
+        display: flex;
+        justify-content: space-between;
+
+        &__wrapper {
+            max-width: 249px;
+        }
+        &__title {
+            font-family: 'Poppins';
+            font-weight: 500;
+            font-size: 0.95em;
+            color: #151515;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+        &__img {
+            height: 96px;
+            width: 96px;
+            background: #F5F5F5;
+            border-radius: 12px;
+        }
+    }
+}

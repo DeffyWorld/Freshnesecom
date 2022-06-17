@@ -1,21 +1,23 @@
 $grid-columns: 12;      /* default: 12; */
 $grid-gutter-width: 2rem;     /* default: 1.5rem; */
 
+$container-padding-x: $grid-gutter-width;    /* $grid-gutter-width * .5; */
+
 $grid-breakpoints: (
   xs: 0,        /* default: 0px; */
   sm: 576px,    /* default: 576px; */
   md: 768px,    /* default: 768px; */
   lg: 992px,    /* default: 992px; */
   xl: 1200px,   /* default: 1200px; */
-  xxl: 1400px   /* default: 1400px; */
+  xxl: 1200px   /* default: 1400px; */
 );
 
 $container-max-widths: (
   sm: 540px,    /* default: 540px; */
   md: 720px,    /* default: 720px; */
   lg: 960px,    /* default: 960px; */
-  xl: 1140px,   /* default: 1140px; */
-  xxl: 1440px   /* default: 1320px; */
+  xl: 1260px,   /* default: 1140px; */
+  xxl: 1230px   /* default: 1320px; */
 );
 
 
