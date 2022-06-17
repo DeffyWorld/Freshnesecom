@@ -1,4 +1,4 @@
-export enum Category {
+export enum Categories {
     bakery = 'Bakery',
     fruitsAndVegetables = 'Fruits and vegetables',
     meatAndFish = 'Meat and Fish',
@@ -20,7 +20,7 @@ export enum View {
 // Products
 export type ProductsItem = {
     id: number;
-    category: Category;
+    category: Categories;
     img: string;
     title: string;
     description: string;
@@ -49,5 +49,5 @@ export interface SearchValueState {
 
 // ChooseCategory
 export interface ChooseCategoryState {
-    activeCategory: Category | null
+    activeCategory: Categories | null
 }

@@ -3,10 +3,9 @@ import './index.scss'
 
 import { ChevronRightAlt } from '../../../assets/svg/_Icons';
 
-import { Category, View } from '../../../redux/_types';
+import { Categories, View } from '../../../redux/_types';
 
-import { useAppDispatch , useAppSelector } from '../../../redux/hooks';
-import { setChooseCategory } from '../../../redux/slices/chooseCategory';
+import { useAppSelector } from '../../../redux/hooks';
 
 import { Link } from 'react-router-dom';
 
@@ -16,56 +15,26 @@ import Slider from '../../Slider/Slider';
 
 
 type Props = {
-    categories: Category[];
+    categories: Categories[];
 }
 
 export default function Homepage({ categories }:Props) {
-	const dispatch = useAppDispatch();
 	const {productsResponse, status} = useAppSelector(state => state.products);
-
-
-
-
-	function chooseCategory(categorie: Category): void {
-		dispatch(setChooseCategory(categorie));
-	}
-	// const filteredProducts: ProductsItem[] = productsResponse && productsResponse.filter(product => {
-    //     return product.title.toLocaleLowerCase().includes(value.toLowerCase());
-    // })
-
 
 
     return (
         <>
-            <section className="categories">
-				<div className="container">
-					<div className="categories__wrapper">
-						{categories.map((categorie, index) => {return (
-							<Link to='/' >
-								<div
-									onClick={() => chooseCategory(categorie)}
-									key={`${categorie}_${index}`} 
-									className="categories__item"
-								>
-									{categorie}
-								</div>
-							</Link>
-						)})}
-					</div>
-				</div>
-			</section>
-
 			<section className="best-selling">
 				<div className="container">
 					<div className="row">
 						<div className="col-3">
 							<div className="best-selling__title">Best selling products</div>
 							<ul className="best-selling__list">
-								<Link to='/' ><li className="best-selling__list-item">{Category.bakery}</li></Link>
-								<Link to='/' ><li className="best-selling__list-item">{Category.drinks}</li></Link>
-								<Link to='/' ><li className="best-selling__list-item">{Category.meatAndFish}</li></Link>
-								<Link to='/' ><li className="best-selling__list-item">{Category.fruitsAndVegetables}</li></Link>
-								<Link to='/' ><li className="best-selling__list-item">{Category.pharmacy}</li></Link>
+								<Link to='/' ><li className="best-selling__list-item">{Categories.bakery}</li></Link>
+								<Link to='/' ><li className="best-selling__list-item">{Categories.drinks}</li></Link>
+								<Link to='/' ><li className="best-selling__list-item">{Categories.meatAndFish}</li></Link>
+								<Link to='/' ><li className="best-selling__list-item">{Categories.fruitsAndVegetables}</li></Link>
+								<Link to='/' ><li className="best-selling__list-item">{Categories.pharmacy}</li></Link>
 							</ul>
 						</div>
 						<ProductItem view={View.Grid} productsItem={productsResponse[1]} status={status} />
@@ -89,7 +58,7 @@ export default function Homepage({ categories }:Props) {
 							<div className="mini-blog__title">Read our Blog posts</div>
 						</div>
 						<div className="col-2 offset-4">
-							<Link to='' >
+							<Link to='/blog' >
 								<div className="mini-blog__button">
 									<div>Go to Blog</div><ChevronRightAlt/>
 								</div>

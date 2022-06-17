@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Category, ChooseCategoryState } from "../_types";
+import { Categories, ChooseCategoryState } from "../_types";
 
 
 const initialState: ChooseCategoryState = {
@@ -9,7 +9,7 @@ export const chooseCategorySlice = createSlice ({
     name: 'chooseCategory',
     initialState,
     reducers: {
-        setChooseCategory(state: ChooseCategoryState, action: PayloadAction<Category | null>):void {
+        setChooseCategory(state: ChooseCategoryState, action: PayloadAction<Categories | null>):void {
             state.activeCategory = action.payload;
         }
     }

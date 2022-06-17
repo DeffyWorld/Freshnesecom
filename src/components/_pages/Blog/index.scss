@@ -1,0 +1,142 @@
+.blog-main {
+    min-height: 560px;
+    background: #FFFFFF;
+
+    &__title {
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 2em;
+        color: #151515;
+        margin-top: 60px;
+        margin-bottom: 20px;
+    }
+
+    &-item {
+        min-height: 400px;
+
+        &__img {
+            background-image: url(../../../assets/img/joseph-gonzalez.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            min-height: inherit;
+            border-radius: 16px;
+        }
+        &__gradient {
+            background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            min-height: inherit;
+            margin-top: -400px;
+            border-radius: 16px;
+        }
+        &__wrapper {
+            margin-top: -130px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        &__title {
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-size: 1.375em;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+        }
+    }
+}
+
+
+.content {
+    margin-top: 20px;
+    margin-bottom: 140px;
+
+    &__list {
+        &-title {
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-size: 1.13em;
+            color: #151515;
+            margin-top: 28px;
+            margin-bottom: 24px;
+        }
+        &-item {
+            font-family: 'Open Sans';
+            font-weight: 400;
+            font-size: 0.9em;
+            color: #A9A9A9;
+            margin-top: 12px;
+        }
+    }
+
+
+
+    &-subscribe {
+        margin-top: 48px;
+
+        &__title {
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-size: 1.13em;
+            color: #151515;
+            margin-bottom: 8px;
+        }
+        &__text {
+            font-family: 'Open Sans';
+            font-weight: 400;
+            font-size: 0.9em;
+            color: #A9A9A9;
+            margin-bottom: 24px;
+        }
+        &__form {
+            background: #F9F9F9;
+            border: 1px solid #D1D1D1;
+            border-radius: 12px;
+            padding: 6px 12px;
+
+            input {
+                min-height: 26px;
+                background: #F9F9F9;
+                border: none;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                color: #A9A9A9;
+            }
+            button {
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 15px;
+                color: #151515;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+
+
+
+    &-item {
+        min-height: 316px;
+        margin-top: 28px;
+
+        &__img {
+            background: #F5F5F5;
+            border-radius: 12px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            min-height: 180px;
+        }
+        &__title {
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #151515;
+            margin-top: 25px;
+            margin-bottom: 8px;
+        }
+    }
+}

@@ -1,19 +1,21 @@
 import React, { useRef } from 'react'
 import './index.scss'
 
-import { Link, Outlet } from 'react-router-dom'
-import { ProductsItem } from '../../redux/_types'
+import { Link, NavLink, Outlet } from 'react-router-dom'
+
+import { Categories, ProductsItem } from '../../redux/_types'
+import { useAppDispatch } from '../../redux/hooks';
+import { setChooseCategory } from '../../redux/slices/chooseCategory';
 
 import { Basket, Lupa, User } from '../../assets/svg/_Icons'
 import { setSearchValue } from '../../redux/slices/searchValue'
-import { useAppDispatch } from '../../redux/hooks'
 
 
 
 type Props = {
     cart: ProductsItem[];
     searchValue: string
-    categories: string[];
+    categories: Categories[];
 }
 
 export default function Layout({ cart, searchValue, categories }:Props) {
@@ -21,6 +23,9 @@ export default function Layout({ cart, searchValue, categories }:Props) {
     const searchInput = useRef<HTMLInputElement>(null!);
 
 
+    function chooseCategory(categorie: Categories): void {
+		dispatch(setChooseCategory(categorie));
+	}
     function onChange(event: React.FormEvent<HTMLInputElement>): void {
         dispatch(setSearchValue(event.currentTarget.value));
     }
@@ -28,6 +33,9 @@ export default function Layout({ cart, searchValue, categories }:Props) {
         event.preventDefault();
         searchInput.current.focus();
     }
+    // const filteredProducts: ProductsItem[] = productsResponse && productsResponse.filter(product => {
+    //     return product.title.toLocaleLowerCase().includes(value.toLowerCase());
+    // })
 
 
     return (
@@ -51,15 +59,9 @@ export default function Layout({ cart, searchValue, categories }:Props) {
 
                         <div className="col-3 offset-4">
                             <div className="pages">
-                                <Link to='/' >
+                                <NavLink to='/blog' >
                                     <div className="pages__item">Blog</div>
-                                </Link>
-                                <Link to='/' >
-                                    <div className="pages__item">About Us</div>
-                                </Link>
-                                <Link to='/' >
-                                    <div className="pages__item">Careers</div>
-                                </Link>
+                                </NavLink>
                             </div>
                         </div>
                     </div>
@@ -97,6 +99,7 @@ export default function Layout({ cart, searchValue, categories }:Props) {
                                         placeholder='Search Products'
                                         value={searchValue}
                                         onChange={onChange}
+                                        onSubmit={event => event.preventDefault()}
                                         ref={searchInput}
                                     />
                                     <button className="search__icon" onClick={onButtonClick} type='button'>
@@ -128,6 +131,23 @@ export default function Layout({ cart, searchValue, categories }:Props) {
                     </div>
                 </div>
             </header>
+            <section className="categories">
+				<div className="container">
+					<div className="categories__wrapper">
+						{categories.map((categorie, index) => {return (
+							<Link to='/' >
+								<div
+									onClick={() => chooseCategory(categorie)}
+									key={`${categorie}_${index}`} 
+									className="categories__item"
+								>
+									{categorie}
+								</div>
+							</Link>
+						)})}
+					</div>
+				</div>
+			</section>
 
             <Outlet />
 

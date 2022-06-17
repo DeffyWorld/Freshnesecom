@@ -1,20 +1,22 @@
 import React, { useEffect } from 'react';
 
-import { Category } from './redux/_types';
+import { Categories } from './redux/_types';
 
 import { useAppDispatch , useAppSelector } from './redux/hooks';
 import { fetchProducts } from './redux/slices/products';
 
 import { Route, Routes } from 'react-router-dom';
 
-import Homepage from './components/_pages/Homepage/Homepage';
 import Layout from './components/Layout/Layout';
+import Homepage from './components/_pages/Homepage/Homepage';
+import Category from './components/_pages/Category/Category';
+import Blog from './components/_pages/Blog/Blog';
 
 
 
 function App() {
-	const categories: Category[] = [
-		Category.bakery, Category.fruitsAndVegetables, Category.meatAndFish, Category.drinks, Category.specialNutrition, Category.pharmacy
+	const categories: Categories[] = [
+		Categories.bakery, Categories.fruitsAndVegetables, Categories.meatAndFish, Categories.drinks, Categories.specialNutrition, Categories.pharmacy
 	]
 
 
@@ -29,12 +31,15 @@ function App() {
 	}, [dispatch]);
 
 
-
   	return (
 		<>
 			<Routes>
 				<Route path='/' element={<Layout cart={cart} searchValue={searchValue} categories={categories} />} >
-					<Route path="/" element={<Homepage categories={categories} />} />
+					<Route index element={<Homepage categories={categories} />} />
+
+					<Route path='/category' element={<Category />} />
+					
+					<Route path='/blog' element={<Blog />} />
 				</Route>
 			</Routes>
 		</>
