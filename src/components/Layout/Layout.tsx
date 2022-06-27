@@ -3,8 +3,8 @@ import './index.scss'
 
 import { Link, NavLink, Outlet } from 'react-router-dom'
 
-import { Categories, ProductsItem } from '../../redux/_types'
-import { useAppDispatch } from '../../redux/hooks';
+import { Categories } from '../../redux/_types'
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { setChooseCategory } from '../../redux/slices/chooseCategory';
 
 import { Basket, Lupa, User } from '../../assets/svg/_Icons'
@@ -13,16 +13,18 @@ import { setSearchValue } from '../../redux/slices/searchValue'
 
 
 type Props = {
-    cart: ProductsItem[];
-    searchValue: string
     categories: Categories[];
 }
 
-export default function Layout({ cart, searchValue, categories }:Props) {
-    const dispatch = useAppDispatch();
+export default function Layout({ categories }:Props) {
     const searchInput = useRef<HTMLInputElement>(null!);
 
 
+    const dispatch = useAppDispatch();
+    const {searchValue} = useAppSelector(state => state.searchValue);
+	const {cart} = useAppSelector(state => state.cart)
+
+    
     function chooseCategory(categorie: Categories): void {
 		dispatch(setChooseCategory(categorie));
 	}
@@ -74,7 +76,6 @@ export default function Layout({ cart, searchValue, categories }:Props) {
             </div>
             <header className="header">
                 <div className="container">
-                    
                     <div className="row">
                         <div className="col-3">
                             <Link to='/' >
@@ -135,10 +136,9 @@ export default function Layout({ cart, searchValue, categories }:Props) {
 				<div className="container">
 					<div className="categories__wrapper">
 						{categories.map((categorie, index) => {return (
-							<Link to='/' >
+							<Link to='/category' key={`${categorie}_${index}`} >
 								<div
 									onClick={() => chooseCategory(categorie)}
-									key={`${categorie}_${index}`} 
 									className="categories__item"
 								>
 									{categorie}

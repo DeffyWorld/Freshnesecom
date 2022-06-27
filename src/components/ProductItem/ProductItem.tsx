@@ -12,10 +12,10 @@ type Props = {
     status: Status;
 }
 
-export default function ProductItem({ view,status , productsItem }: Props) {
+export default function ProductItem({ view, status, productsItem }: Props) {
     return status === Status.SUCCESS ? (
         view === View.Grid ? (
-            <div className="col-3">
+            <div className="col-4">
                 <div className="product-item product-item--grid">
                     {productsItem.discount && (
                         <div className="product-item__discount">
@@ -49,7 +49,7 @@ export default function ProductItem({ view,status , productsItem }: Props) {
                 </div>
             </div>
         ) : (
-            <div className="col-9">
+            <div className="col-12">
                 <div className="container">
                     <div className="product-item product-item--list">
                         <div className="row">
@@ -106,7 +106,7 @@ export default function ProductItem({ view,status , productsItem }: Props) {
         )
     ) : (
         view === View.Grid ? (
-            <div className="col-3">
+            <div className="col-4">
                 <ContentLoader 
                     speed={3}
                     width={268}
@@ -123,20 +123,22 @@ export default function ProductItem({ view,status , productsItem }: Props) {
                 </ContentLoader>
             </div>
         ) : (
-            <ContentLoader 
-                speed={3}
-                width={869}
-                height={280}
-                viewBox="0 0 869 280"
-                backgroundColor="#ededed"
-                foregroundColor="#d6d6d6"
-            >
-                <rect x="0" y="0" rx="0" ry="0" width="268" height="280" /> 
-                <rect x="300" y="32" rx="0" ry="0" width="164" height="14" /> 
-                <rect x="300" y="63" rx="0" ry="0" width="269" height="14" />
-                <rect x="665" y="29" rx="0" ry="0" width="91" height="18" />
-                <rect x="665" y="212" rx="0" ry="0" width="91" height="36" />
-            </ContentLoader>
+            <div className="col-12">
+                <ContentLoader 
+                    speed={3}
+                    width={869}
+                    height={280}
+                    viewBox="0 0 869 280"
+                    backgroundColor="#ededed"
+                    foregroundColor="#d6d6d6"
+                >
+                    <rect x="0" y="0" rx="0" ry="0" width="268" height="280" /> 
+                    <rect x="300" y="32" rx="0" ry="0" width="164" height="14" /> 
+                    <rect x="300" y="63" rx="0" ry="0" width="269" height="14" />
+                    <rect x="665" y="29" rx="0" ry="0" width="91" height="18" />
+                    <rect x="665" y="212" rx="0" ry="0" width="91" height="36" />
+                </ContentLoader>
+            </div>
         )
     )
 }

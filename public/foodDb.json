@@ -2,11 +2,11 @@
     "products": [
         {
             "id": 1,
-            "category": "Fruits and vegetables",
+            "category": "Bakery",
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
             "title": "Apple",
             "description": "Red, cool, juicy.",
-            "rating": 4.3,
+            "rating": 2.1,
             "price": 0.15,
             "discount": null
         },
@@ -46,7 +46,7 @@
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
             "title": "Apple",
             "description": "Red, cool, juicy.",
-            "rating": 4.3,
+            "rating": 5,
             "price": 0.15,
             "discount": 0.10
         },
@@ -86,7 +86,7 @@
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
             "title": "Apple",
             "description": "Red, cool, juicy.",
-            "rating": 4.3,
+            "rating": 2,
             "price": 0.15,
             "discount": null
         },
@@ -106,7 +106,7 @@
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
             "title": "Apple",
             "description": "Red, cool, juicy.",
-            "rating": 4.3,
+            "rating": 3.1,
             "price": 0.15,
             "discount": null
         },
@@ -136,7 +136,7 @@
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
             "title": "Apple",
             "description": "Red, cool, juicy.",
-            "rating": 4.3,
+            "rating": 1.6,
             "price": 0.15,
             "discount": null
         },
@@ -146,7 +146,7 @@
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
             "title": "Apple",
             "description": "Red, cool, juicy.",
-            "rating": 4.3,
+            "rating": 1,
             "price": 0.15,
             "discount": 0.27
         },
@@ -156,7 +156,7 @@
             "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
             "title": "Apple",
             "description": "Red, cool, juicy.",
-            "rating": 4.3,
+            "rating": 5,
             "price": 0.15,
             "discount": null
         }

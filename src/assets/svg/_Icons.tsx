@@ -82,8 +82,8 @@ export function Basket({
 
 
 export function Lupa({
-    width = '24px',
-    height = '24px',
+    width = '16px',
+    height = '16px',
     fill = 'none',
     ...props
 }: React.SVGProps<SVGSVGElement>) {
@@ -155,9 +155,9 @@ export function ChevronLeft({
             <path
                 d="M18.9332 9.62671L13.4532 15.1067C13.2048 15.3565 13.0654 15.6945 13.0654 16.0467C13.0654 16.399 13.2048 16.7369 13.4532 16.9867L18.7865 22.32"
                 stroke={fill}
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="bevel"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
             />
         </svg>
     );
@@ -181,9 +181,9 @@ export function ChevronRight({
             <path
                 d="M13.0664 22.3734L18.5464 16.8934C18.7947 16.6436 18.9341 16.3056 18.9341 15.9534C18.9341 15.6011 18.7947 15.2632 18.5464 15.0134L13.2131 9.68005"
                 stroke={fill}
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="bevel"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
             />
         </svg>
     );
@@ -202,9 +202,114 @@ export function ChevronRightAlt() {
             <path
                 d="M6.5332 11.1865L9.2732 8.44651C9.39737 8.3216 9.46706 8.15263 9.46706 7.97651C9.46706 7.80039 9.39737 7.63142 9.2732 7.50651L6.60654 4.83984"
                 stroke="#6A983C"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="bevel"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+            />
+        </svg>
+    );
+}
+
+
+
+export function GridView({
+    color,
+    ...props
+}: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M13.333 1.33331H2.66634C1.92996 1.33331 1.33301 1.93027 1.33301 2.66665V13.3333C1.33301 14.0697 1.92996 14.6666 2.66634 14.6666H13.333C14.0694 14.6666 14.6663 14.0697 14.6663 13.3333V2.66665C14.6663 1.93027 14.0694 1.33331 13.333 1.33331Z"
+                stroke={color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M1.33301 8H14.6663"
+                stroke={color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M8 1.33331V14.6666"
+                stroke={color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+}
+
+
+
+export function ListView({
+    color,
+    ...props
+}: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M13.333 1.33331H2.66634C1.92996 1.33331 1.33301 1.93027 1.33301 2.66665V13.3333C1.33301 14.0697 1.92996 14.6666 2.66634 14.6666H13.333C14.0694 14.6666 14.6663 14.0697 14.6663 13.3333V2.66665C14.6663 1.93027 14.0694 1.33331 13.333 1.33331Z"
+                stroke={color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M1.33301 4.66663H14.6663"
+                stroke={color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M1.33301 8H14.6663"
+                stroke={color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M1.33301 11.3333H14.6663"
+                stroke={color}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    );
+}
+
+
+
+export function ChekboxChecked() {
+    return (
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M20 2.00003H4C2.89543 2.00003 2 2.89546 2 4.00003V20C2 21.1046 2.89543 22 4 22H20C21.1046 22 22 21.1046 22 20V4.00003C22 2.89546 21.1046 2.00003 20 2.00003Z"
+                fill="#6A983C"
+                stroke="#46760A"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+            />
+            <path
+                d="M6.55957 12.85L9.61957 15.91L17.4396 8.09003"
+                stroke="#FDFDFD"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
         </svg>
     );

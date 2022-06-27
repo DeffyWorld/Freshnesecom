@@ -4,6 +4,7 @@
     border-radius: 12px;
     position: relative;
     box-sizing: border-box;
+    margin-bottom: 30px;
     
     &--grid {
         min-height: 332px;
@@ -16,8 +17,8 @@
     &__discount {
         position: absolute;
         z-index: 100;
-        top: 26px;
-        left: 28px;
+        top: 16px;
+        left: 20px;
         font-family: 'Poppins';
         font-weight: 600;
         font-size: 0.75em;

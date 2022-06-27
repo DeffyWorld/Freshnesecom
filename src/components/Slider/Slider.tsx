@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './index.scss'
 
 import Swiper, {Navigation, FreeMode} from 'swiper';
@@ -7,32 +7,34 @@ import 'swiper/css';
 import { ChevronLeft, ChevronRight } from '../../assets/svg/_Icons';
 
 export default function Slider() {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-	const swiper = new Swiper('.swiper', {
-        modules: [Navigation, FreeMode],
-		slidesPerView: 3,
-		spaceBetween: 32,
-		navigation: {
-			nextEl: '.slider__button-prev',
-			prevEl: '.slider__button-next',
-		},
-		loop: true,
-		freeMode: true,
-        // breakpoints: {
-        //     640: {
-        //       slidesPerView: 2,
-        //       spaceBetween: 20,
-        //     },
-        //     768: {
-        //       slidesPerView: 4,
-        //       spaceBetween: 40,
-        //     },
-        //     1024: {
-        //       slidesPerView: 5,
-        //       spaceBetween: 50,
-        //     },
-        // },
-	});
+	useEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const swiper = new Swiper('.swiper', {
+            modules: [Navigation, FreeMode],
+            slidesPerView: 3,
+            spaceBetween: 32,
+            navigation: {
+                nextEl: '.slider__button-prev',
+                prevEl: '.slider__button-next',
+            },
+            loop: true,
+            freeMode: true,
+            // breakpoints: {
+            //     640: {
+            //       slidesPerView: 2,
+            //       spaceBetween: 20,
+            //     },
+            //     768: {
+            //       slidesPerView: 4,
+            //       spaceBetween: 40,
+            //     },
+            //     1024: {
+            //       slidesPerView: 5,
+            //       spaceBetween: 50,
+            //     },
+            // },
+        });
+    }, [])
 
 
     return (

@@ -7,7 +7,7 @@ export default function Blog() {
 			<section className="blog-main">
 				<div className="container">
 					<div className="row">
-						<h1 className="blog-main__title">Fruit and vegetables</h1>
+						<h1 className="blog-main__title">Fruits and vegetables</h1>
 					</div>
 					<div className="row">
 						<div className="col-6">
@@ -78,7 +78,7 @@ export default function Blog() {
 										type="text" 
 										placeholder='Your email address'
 									/>
-									<button type='submit' onSubmit={event => event.preventDefault()}>Subscribe</button>
+									<button type='submit' onClick={event => event.preventDefault()}>Subscribe</button>
 								</form>
 							</div>
 						</div>

@@ -4,7 +4,6 @@ import './index.scss'
 import { ChevronRightAlt } from '../../../assets/svg/_Icons';
 
 import { Categories, View } from '../../../redux/_types';
-
 import { useAppSelector } from '../../../redux/hooks';
 
 import { Link } from 'react-router-dom';
@@ -37,9 +36,15 @@ export default function Homepage({ categories }:Props) {
 								<Link to='/' ><li className="best-selling__list-item">{Categories.pharmacy}</li></Link>
 							</ul>
 						</div>
-						<ProductItem view={View.Grid} productsItem={productsResponse[1]} status={status} />
-						<ProductItem view={View.Grid} productsItem={productsResponse[4]} status={status} />
-						<ProductItem view={View.Grid} productsItem={productsResponse[10]} status={status} />
+						<div className="col-9">
+							<div className="container">
+								<div className="row">
+									<ProductItem view={View.Grid} productsItem={productsResponse[1]} status={status} />
+									<ProductItem view={View.Grid} productsItem={productsResponse[4]} status={status} />
+									<ProductItem view={View.Grid} productsItem={productsResponse[10]} status={status} />
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
