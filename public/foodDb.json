@@ -17,7 +17,17 @@
             "title": "Apple",
             "description": "Red, cool, juicy.",
             "rating": 4.3,
-            "price": 0.15,
+            "price": 15,
+            "discount": null
+        },
+        {
+            "id": 2,
+            "category": "Fruits and vegetables",
+            "img": "https://www.collinsdictionary.com/images/thumb/apple_158989157_250.jpg",
+            "title": "Apple",
+            "description": "Red, cool, juicy.",
+            "rating": 5,
+            "price": 450,
             "discount": null
         },
         {
@@ -27,7 +37,7 @@
             "title": "Apple",
             "description": "Red, cool, juicy.",
             "rating": 4.3,
-            "price": 0.15,
+            "price": 75,
             "discount": 0.15
         },
         {
@@ -37,7 +47,7 @@
             "title": "Apple",
             "description": "Red, cool, juicy.",
             "rating": 4.3,
-            "price": 0.15,
+            "price": 800,
             "discount": null
         },
         {
