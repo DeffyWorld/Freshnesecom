@@ -239,10 +239,10 @@
 }
 .price-input::-webkit-outer-spin-button,
 .price-input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0;
 }
+
 
 .noUi {
     &-target {
@@ -259,7 +259,6 @@
         background: #6A983C;
     }
     &-handle {
-        // position: absolute;
         width: 20px;
         height: 20px;
         background: #FFFFFF;
@@ -278,4 +277,78 @@
     height: 20px;
     right: -7px;
     top: -6px;
+}
+
+
+
+// .previos {
+    
+// }
+// .previos .disabled {
+//     color: #A9A9A9;
+// }
+.pagination {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    padding-right: 45px;
+
+    &__link {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        color: #151515;
+        margin-left: 8px;
+        
+        &--active {
+            color: #A9A9A9;
+        }
+    }
+
+    &__prev {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        color: #151515;
+    }
+
+    &__next {
+        margin: auto;
+        width: 214px;
+        height: 47px;
+        background: #6A983C;
+        border: 2px solid #46760A;
+        border-radius: 12px;
+        transition: all 200ms ease;
+        cursor: pointer;
+        text-align: center;
+        padding: 10px;
+
+        a {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 15px;
+            color: #FFFFFF;
+            
+        }
+
+        &:hover {
+            a {
+                color: #A9A9A9;
+            }
+            background: #FFFFFF;
+            border: 2px solid #A9A9A9;
+        }
+    }
+    &__disabled {
+        cursor: none;
+        a {
+            color: #A9A9A9;
+        }
+        background: #FFFFFF;
+        pointer-events: none;
+    }
 }
