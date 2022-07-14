@@ -83,6 +83,7 @@
         &__cart {
             position: relative;
             transition: all 200ms ease;
+            cursor: pointer;
             &:hover {
                 opacity: 0.6;
             }

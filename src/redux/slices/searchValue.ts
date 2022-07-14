@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { SearchValueState } from "../_types";
+import { Categories, SearchValueState } from "../_types";
 
 
 const initialState: SearchValueState = {
-    searchValue: ''
+    searchValue: '',
+    searchedCategory: null
 }
 export const searchValueSlice = createSlice ({
     name: 'searchValue',
@@ -11,8 +12,11 @@ export const searchValueSlice = createSlice ({
     reducers: {
         setSearchValue(state: SearchValueState, action: PayloadAction<string>):void {
             state.searchValue = action.payload;
+        },
+        setSearchedCategory(state: SearchValueState, action: PayloadAction<Categories | null>):void {
+            state.searchedCategory = action.payload;
         }
     }
 })
 
-export const { setSearchValue } = searchValueSlice.actions;
+export const { setSearchValue, setSearchedCategory } = searchValueSlice.actions;

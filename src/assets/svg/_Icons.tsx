@@ -1,13 +1,11 @@
-import React from 'react'
-
-
+import React from "react";
 
 export function User({
-    width = '24px',
-    height = '24px',
-    fill = 'none',
+    width = "24px",
+    height = "24px",
+    fill = "none",
     ...props
-}: React.SVGProps<SVGSVGElement> ) {
+}: React.SVGProps<SVGSVGElement>) {
     return (
         <svg
             width={width}
@@ -16,8 +14,7 @@ export function User({
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
             {...props}
-            >
-
+        >
             <path
                 d="M3 21.9999L3.79 19.1199C6.4 9.6199 17.6 9.6199 20.21 19.1199L21 21.9999"
                 stroke="#151515"
@@ -33,17 +30,15 @@ export function User({
                 strokeLinejoin="bevel"
             />
         </svg>
-    )
+    );
 }
 
-
-
 export function Basket({
-    width = '24px',
-    height = '24px',
-    fill = 'none',
+    width = "24px",
+    height = "24px",
+    fill = "none",
     ...props
-}: React.SVGProps<SVGSVGElement> ) {
+}: React.SVGProps<SVGSVGElement>) {
     return (
         <svg
             width={width}
@@ -52,8 +47,7 @@ export function Basket({
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
             {...props}
-            >
-                
+        >
             <path
                 d="M18.39 20.8499H6.61004C6.29236 20.8502 5.98375 20.7439 5.73358 20.5481C5.4834 20.3523 5.3061 20.0783 5.23004 19.7699L2.58004 9.15987C2.55418 9.05658 2.55222 8.94875 2.57432 8.84459C2.59642 8.74044 2.64199 8.64269 2.70756 8.5588C2.77313 8.47491 2.85698 8.40708 2.95272 8.36048C3.04845 8.31387 3.15356 8.28973 3.26004 8.28987H21.74C21.8465 8.28973 21.9516 8.31387 22.0474 8.36048C22.1431 8.40708 22.2269 8.47491 22.2925 8.5588C22.3581 8.64269 22.4037 8.74044 22.4258 8.84459C22.4479 8.94875 22.4459 9.05658 22.42 9.15987L19.77 19.7699C19.694 20.0783 19.5167 20.3523 19.2665 20.5481C19.0163 20.7439 18.7077 20.8502 18.39 20.8499V20.8499Z"
                 stroke="#151515"
@@ -76,15 +70,13 @@ export function Basket({
                 strokeLinejoin="round"
             />
         </svg>
-    )
+    );
 }
 
-
-
 export function Lupa({
-    width = '16px',
-    height = '16px',
-    fill = 'none',
+    width = "16px",
+    height = "16px",
+    fill = "none",
     ...props
 }: React.SVGProps<SVGSVGElement>) {
     return (
@@ -93,7 +85,8 @@ export function Lupa({
             height={height}
             fill={fill}
             viewBox="0 0 14 14"
-            xmlns="http://www.w3.org/2000/svg">
+            xmlns="http://www.w3.org/2000/svg"
+        >
             <path
                 d="M8.19303 10.4333C10.7704 10.4333 12.8597 8.34394 12.8597 5.76661C12.8597 3.18928 10.7704 1.09995 8.19303 1.09995C5.61571 1.09995 3.52637 3.18928 3.52637 5.76661C3.52637 8.34394 5.61571 10.4333 8.19303 10.4333Z"
                 stroke="#151515"
@@ -109,24 +102,23 @@ export function Lupa({
                 strokeLinejoin="bevel"
             />
         </svg>
-    )
+    );
 }
 
-
-
 export function Star({
-    width = '24px',
-    height = '24px',
-    fill = '#151515',
+    width = "24px",
+    height = "24px",
+    fill = "#151515",
     ...props
 }: React.SVGProps<SVGSVGElement>) {
     return (
         <svg
             width={width}
             height={height}
-            fill='none'
+            fill="none"
             viewBox="0 0 21 20"
-            xmlns="http://www.w3.org/2000/svg">
+            xmlns="http://www.w3.org/2000/svg"
+        >
             <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -134,15 +126,13 @@ export function Star({
                 fill={fill}
             />
         </svg>
-    )
+    );
 }
 
-
-
 export function ChevronLeft({
-    width = '32px',
-    height = '32px',
-    fill = 'white',
+    width = "32px",
+    height = "32px",
+    fill = "white",
     ...props
 }: React.SVGProps<SVGSVGElement>) {
     return (
@@ -151,7 +141,8 @@ export function ChevronLeft({
             height={height}
             viewBox="0 0 32 32"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+            xmlns="http://www.w3.org/2000/svg"
+        >
             <path
                 d="M18.9332 9.62671L13.4532 15.1067C13.2048 15.3565 13.0654 15.6945 13.0654 16.0467C13.0654 16.399 13.2048 16.7369 13.4532 16.9867L18.7865 22.32"
                 stroke={fill}
@@ -163,12 +154,10 @@ export function ChevronLeft({
     );
 }
 
-
-
 export function ChevronRight({
-    width = '32px',
-    height = '32px',
-    fill = 'white',
+    width = "32px",
+    height = "32px",
+    fill = "white",
     ...props
 }: React.SVGProps<SVGSVGElement>) {
     return (
@@ -177,7 +166,8 @@ export function ChevronRight({
             height={height}
             viewBox="0 0 32 32"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+            xmlns="http://www.w3.org/2000/svg"
+        >
             <path
                 d="M13.0664 22.3734L18.5464 16.8934C18.7947 16.6436 18.9341 16.3056 18.9341 15.9534C18.9341 15.6011 18.7947 15.2632 18.5464 15.0134L13.2131 9.68005"
                 stroke={fill}
@@ -189,8 +179,6 @@ export function ChevronRight({
     );
 }
 
-
-
 export function ChevronRightAlt() {
     return (
         <svg
@@ -198,7 +186,8 @@ export function ChevronRightAlt() {
             height="16"
             viewBox="0 0 16 16"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+            xmlns="http://www.w3.org/2000/svg"
+        >
             <path
                 d="M6.5332 11.1865L9.2732 8.44651C9.39737 8.3216 9.46706 8.15263 9.46706 7.97651C9.46706 7.80039 9.39737 7.63142 9.2732 7.50651L6.60654 4.83984"
                 stroke="#6A983C"
@@ -210,19 +199,15 @@ export function ChevronRightAlt() {
     );
 }
 
-
-
-export function GridView({
-    color,
-    ...props
-}: React.SVGProps<SVGSVGElement>) {
+export function GridView({ color, ...props }: React.SVGProps<SVGSVGElement>) {
     return (
         <svg
             width="16"
             height="16"
             viewBox="0 0 16 16"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+            xmlns="http://www.w3.org/2000/svg"
+        >
             <path
                 d="M13.333 1.33331H2.66634C1.92996 1.33331 1.33301 1.93027 1.33301 2.66665V13.3333C1.33301 14.0697 1.92996 14.6666 2.66634 14.6666H13.333C14.0694 14.6666 14.6663 14.0697 14.6663 13.3333V2.66665C14.6663 1.93027 14.0694 1.33331 13.333 1.33331Z"
                 stroke={color}
@@ -245,19 +230,15 @@ export function GridView({
     );
 }
 
-
-
-export function ListView({
-    color,
-    ...props
-}: React.SVGProps<SVGSVGElement>) {
+export function ListView({ color, ...props }: React.SVGProps<SVGSVGElement>) {
     return (
         <svg
             width="16"
             height="16"
             viewBox="0 0 16 16"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+            xmlns="http://www.w3.org/2000/svg"
+        >
             <path
                 d="M13.333 1.33331H2.66634C1.92996 1.33331 1.33301 1.93027 1.33301 2.66665V13.3333C1.33301 14.0697 1.92996 14.6666 2.66634 14.6666H13.333C14.0694 14.6666 14.6663 14.0697 14.6663 13.3333V2.66665C14.6663 1.93027 14.0694 1.33331 13.333 1.33331Z"
                 stroke={color}
@@ -286,8 +267,6 @@ export function ListView({
     );
 }
 
-
-
 export function ChekboxChecked() {
     return (
         <svg
@@ -295,7 +274,8 @@ export function ChekboxChecked() {
             height="24"
             viewBox="0 0 24 24"
             fill="none"
-            xmlns="http://www.w3.org/2000/svg">
+            xmlns="http://www.w3.org/2000/svg"
+        >
             <path
                 d="M20 2.00003H4C2.89543 2.00003 2 2.89546 2 4.00003V20C2 21.1046 2.89543 22 4 22H20C21.1046 22 22 21.1046 22 20V4.00003C22 2.89546 21.1046 2.00003 20 2.00003Z"
                 fill="#6A983C"
@@ -310,6 +290,61 @@ export function ChekboxChecked() {
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+            />
+        </svg>
+    );
+}
+
+export function Close({
+    width = "13",
+    height = "12",
+}: React.SVGProps<SVGSVGElement>) {
+    return (
+        <svg
+            width={width}
+            height={height}
+            viewBox={`0 0 ${width} ${height}`}
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M9.68031 9.17999L3.32031 2.81999"
+                stroke="#151515"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+            />
+            <path
+                d="M9.68031 2.81999L3.32031 9.17999"
+                stroke="#151515"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+            />
+        </svg>
+    );
+}
+
+export function CloseBig() {
+    return (
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M18.3606 18.36L5.64062 5.63995"
+                stroke="#151515"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
+            />
+            <path
+                d="M18.3606 5.63995L5.64062 18.36"
+                stroke="#151515"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="bevel"
             />
         </svg>
     );

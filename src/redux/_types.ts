@@ -13,7 +13,12 @@ export enum Status {
 }
 export enum View {
     Grid = 'grid',
-    List = 'list'
+    List = 'list',
+    Cart = 'cart'
+}
+export enum IsCartOpen {
+    Open = 'open',
+    Closed = 'closed'
 }
 
 
@@ -35,19 +40,22 @@ export interface ProductsState {
 }
 
 
-// Cart
-export interface CartState {
+// ShoppingCart
+export interface ShoppingCartState {
+    idArray: number[];
     cart: ProductsItem[];
+    isCartOpen: IsCartOpen;
 }
 
 
 // SearchValue
 export interface SearchValueState {
     searchValue: string;
+    searchedCategory: Categories | null;
 }
 
 
 // ChooseCategory
 export interface ChooseCategoryState {
-    activeCategory: Categories | null
+    activeCategory: Categories | null;
 }

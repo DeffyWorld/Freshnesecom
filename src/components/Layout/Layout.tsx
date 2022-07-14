@@ -3,12 +3,14 @@ import './index.scss'
 
 import { Link, NavLink, Outlet } from 'react-router-dom'
 
-import { Categories } from '../../redux/_types'
+import { Categories, IsCartOpen } from '../../redux/_types'
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { setChooseCategory } from '../../redux/slices/chooseCategory';
 
 import { Basket, Lupa, User } from '../../assets/svg/_Icons'
-import { setSearchValue } from '../../redux/slices/searchValue'
+import { setSearchedCategory, setSearchValue } from '../../redux/slices/searchValue'
+import { setIsCartOpen } from '../../redux/slices/shoppingCart';
+import Cart from '../Cart/Cart';
 
 
 
@@ -21,8 +23,9 @@ export default function Layout({ categories }:Props) {
 
 
     const dispatch = useAppDispatch();
+
     const {searchValue} = useAppSelector(state => state.searchValue);
-	const {cart} = useAppSelector(state => state.cart)
+	const {cart, isCartOpen} = useAppSelector(state => state.shoppingCart);
 
     
     function chooseCategory(categorie: Categories): void {
@@ -34,6 +37,16 @@ export default function Layout({ categories }:Props) {
     function onButtonClick(event: React.FormEvent<HTMLButtonElement>): void {
         event.preventDefault();
         searchInput.current.focus();
+    }
+
+    function chooseSearchedCategory(category: Categories | null): void {
+        dispatch(setSearchedCategory(category));
+    }
+
+    function changeIsCartOpen(): void {
+        isCartOpen === IsCartOpen.Open 
+            ? dispatch(setIsCartOpen(IsCartOpen.Closed))
+            : dispatch(setIsCartOpen(IsCartOpen.Open));
     }
     // const filteredProducts: ProductsItem[] = productsResponse && productsResponse.filter(product => {
     //     return product.title.toLocaleLowerCase().includes(value.toLowerCase());
@@ -88,9 +101,13 @@ export default function Layout({ categories }:Props) {
                                 <form className="search__form">
                                     <select name="search__select" className="search__select">
                                         <>
-                                            <option value="All categories">All categories</option>
-                                            {categories.map((categorie, index) => { return (
-                                                <option key={`${categorie}_${index}`} value={categorie}>{categorie}</option>
+                                            <option value="All categories" onClick={() => chooseSearchedCategory(null)}>All categories</option>
+                                            {categories.map((category, index) => { return (
+                                                <option 
+                                                    key={`${category}_${index}`} 
+                                                    value={category} 
+                                                    onClick={() => chooseSearchedCategory(category)}
+                                                >{category}</option>
                                             )})}
                                         </>
                                     </select>
@@ -107,6 +124,9 @@ export default function Layout({ categories }:Props) {
                                         <Lupa />
                                     </button>
                                 </form>
+                                <div className="search__results">
+                                    
+                                </div>
                             </div>
                         </div>
                         
@@ -117,21 +137,22 @@ export default function Layout({ categories }:Props) {
                                         <User />
                                     </div>
                                 </Link>
-                                <Link to='/' >
-                                    <div className="header-icons__cart">
-                                        {cart.length !== 0 && (
-                                            <div className="header-icons__cart--count">
-                                                {cart.length}
-                                            </div>
-                                        )}
-                                        <Basket />
-                                    </div>
-                                </Link>
+                                <div className="header-icons__cart" onClick={changeIsCartOpen}>
+                                    {cart.length !== 0 && (
+                                        <div className="header-icons__cart--count">
+                                            {cart.length}
+                                        </div>
+                                    )}
+                                    <Basket />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </header>
+
+            <Cart/>
+
             <section className="categories">
 				<div className="container">
 					<div className="categories__wrapper">

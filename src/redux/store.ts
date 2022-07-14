@@ -1,16 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { cartSlice } from "./slices/cart";
 import { chooseCategorySlice } from "./slices/chooseCategory";
 import { productsSlice } from "./slices/products";
 import { searchValueSlice } from "./slices/searchValue";
+import { shoppingCartSlice } from "./slices/shoppingCart";
 
 
 const store = configureStore({
     reducer: {
         products: productsSlice.reducer,
         searchValue: searchValueSlice.reducer,
-        cart: cartSlice.reducer,
+        shoppingCart: shoppingCartSlice.reducer,
         chooseCategory: chooseCategorySlice.reducer
     },
 });

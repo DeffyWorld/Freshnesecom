@@ -17,10 +17,8 @@ type Props = {
 };
 
 export default function Category({ categories }: Props) {
-    const { activeCategory } = useAppSelector((state) => state.chooseCategory);
-    const { productsResponse, status } = useAppSelector(
-        (state) => state.products
-    );
+    const { activeCategory } = useAppSelector(state => state.chooseCategory);
+    const { productsResponse, status } = useAppSelector(state => state.products);
 
     const [checkedRating, setCheckedRating] = useState<number[]>([]);
     const [view, setView] = useState<View>(View.Grid);
@@ -36,10 +34,7 @@ export default function Category({ categories }: Props) {
         setView(View.List);
     }
 
-    function handleCheckbox(
-        value: number,
-        event: React.ChangeEvent<HTMLInputElement>
-    ): void {
+    function handleCheckbox(value: number, event: React.ChangeEvent<HTMLInputElement>): void {
         const newChecked = [...checkedRating];
         checkedRating.indexOf(value) === -1
             ? newChecked.push(value)
@@ -78,7 +73,7 @@ export default function Category({ categories }: Props) {
     const [currentItems, setCurrentItems] = useState<ProductsItem[]>(null!);
     const [pageCount, setPageCount] = useState<number>(0);
     const [itemOffset, setItemOffset] = useState<number>(0);
-    const itemsPerPage = 9;
+    const itemsPerPage = view === View.Grid ? 9 : 4;
 
     useEffect(() => {
         const a = productsResponse;
@@ -335,22 +330,15 @@ export default function Category({ categories }: Props) {
                         <div className="col-9">
                             <div className="container">
                                 <div className="row">
-                                    {currentItems &&
-                                        currentItems.map(
-                                            (
-                                                product: ProductsItem,
-                                                index: number
-                                            ) => {
-                                                return (
-                                                    <ProductItem
-                                                        key={`${product}_${index}`}
-                                                        view={view}
-                                                        status={status}
-                                                        productsItem={product}
-                                                    />
-                                                );
-                                            }
-                                        )}
+                                    {currentItems && currentItems.map(
+                                        (product: ProductsItem,index: number) => {return (
+                                            <ProductItem
+                                                key={`${product}_${index}`}
+                                                view={view}
+                                                status={status}
+                                                productsItem={product}
+                                            />);
+                                        })}
                                 </div>
                             </div>
                         </div>
