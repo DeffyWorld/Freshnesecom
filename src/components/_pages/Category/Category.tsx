@@ -27,6 +27,7 @@ export default function Category({ categories }: Props) {
     const [maxPrice, setMaxPrice] = useState<number>(999);
     const [priceFilter, setPriceFilter] = useState<number[]>([0, 999]);
 
+    
     function setViewGrid(): void {
         setView(View.Grid);
     }
@@ -34,12 +35,14 @@ export default function Category({ categories }: Props) {
         setView(View.List);
     }
 
+
     function handleCheckbox(value: number, event: React.ChangeEvent<HTMLInputElement>): void {
         const newChecked = [...checkedRating];
         checkedRating.indexOf(value) === -1
             ? newChecked.push(value)
             : newChecked.splice(checkedRating.indexOf(value), 1);
         setCheckedRating(newChecked);
+        console.log(newChecked);
     }
 
     function onToddlerMove(event: any): void {
@@ -61,30 +64,34 @@ export default function Category({ categories }: Props) {
         setPriceFilter([0, 999]);
     }
 
-    const filteredProducts = productsResponse.filter(
-        (product) =>
-            (!activeCategory || product.category === activeCategory) &&
-            (!checkedRating.length || checkedRating.includes(product.rating)) &&
-            (!priceFilter[0] || priceFilter[0] <= product.price) &&
-            (!priceFilter[1] || priceFilter[1] >= product.price)
-    );
 
     // Pagination
     const [currentItems, setCurrentItems] = useState<ProductsItem[]>(null!);
     const [pageCount, setPageCount] = useState<number>(0);
     const [itemOffset, setItemOffset] = useState<number>(0);
     const itemsPerPage = view === View.Grid ? 9 : 4;
+    const [filteredProductsLength, setFilteredProductsLength] = useState<number>(0);
 
     useEffect(() => {
-        const a = productsResponse;
+        const filteredProducts = productsResponse.filter(product =>
+            (!activeCategory || product.category === activeCategory) &&
+            (!checkedRating.length || checkedRating.includes(Math.round(product.rating))) &&
+            (!priceFilter[0] || priceFilter[0] <= product.price) &&
+            (!priceFilter[1] || priceFilter[1] >= product.price)
+        );
+
         const endOffset = itemOffset + itemsPerPage;
-        setCurrentItems(a.slice(itemOffset, endOffset));
-        setPageCount(Math.ceil(a.length / itemsPerPage));
-    }, [itemOffset, itemsPerPage, productsResponse]);
+        setFilteredProductsLength(filteredProducts.length);
+        setCurrentItems(filteredProducts.slice(itemOffset, endOffset));
+        setPageCount(Math.ceil(filteredProducts.length / itemsPerPage));
+
+        console.log(checkedRating);
+        
+    }, [activeCategory, checkedRating, itemOffset, itemsPerPage, priceFilter, productsResponse]);
 
     function handlePageClick(event: any) {
         const newOffset =
-            (event.selected * itemsPerPage) % filteredProducts.length;
+            (event.selected * itemsPerPage) % filteredProductsLength;
         setItemOffset(newOffset);
     }
 
@@ -191,11 +198,7 @@ export default function Category({ categories }: Props) {
                                                 className="side-item__list-item__label"
                                                 htmlFor="checkbox5Star"
                                             >
-                                                <Star fill="#dce000" />
-                                                <Star fill="#dce000" />
-                                                <Star fill="#dce000" />
-                                                <Star fill="#dce000" />
-                                                <Star fill="#dce000" />
+                                                <Star fill="#dce000" /><Star fill="#dce000" /><Star fill="#dce000" /><Star fill="#dce000" /><Star fill="#dce000" />
                                             </label>
                                         </li>
                                         <li className="side-item__list-item">
@@ -211,10 +214,7 @@ export default function Category({ categories }: Props) {
                                                 className="side-item__list-item__label"
                                                 htmlFor="checkbox4Star"
                                             >
-                                                <Star fill="#dce000" />
-                                                <Star fill="#dce000" />
-                                                <Star fill="#dce000" />
-                                                <Star fill="#dce000" />
+                                                <Star fill="#dce000" /><Star fill="#dce000" /><Star fill="#dce000" /><Star fill="#dce000" />
                                             </label>
                                         </li>
                                         <li className="side-item__list-item">
@@ -230,9 +230,7 @@ export default function Category({ categories }: Props) {
                                                 className="side-item__list-item__label"
                                                 htmlFor="checkbox3Star"
                                             >
-                                                <Star fill="#dce000" />
-                                                <Star fill="#dce000" />
-                                                <Star fill="#dce000" />
+                                                <Star fill="#dce000" /><Star fill="#dce000" /><Star fill="#dce000" />
                                             </label>
                                         </li>
                                         <li className="side-item__list-item">
@@ -248,8 +246,7 @@ export default function Category({ categories }: Props) {
                                                 className="side-item__list-item__label"
                                                 htmlFor="checkbox2Star"
                                             >
-                                                <Star fill="#dce000" />
-                                                <Star fill="#dce000" />
+                                                <Star fill="#dce000" /><Star fill="#dce000" />
                                             </label>
                                         </li>
                                         <li className="side-item__list-item">

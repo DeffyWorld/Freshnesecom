@@ -100,16 +100,14 @@ export default function Layout({ categories }:Props) {
                             <div className="search">
                                 <form className="search__form">
                                     <select name="search__select" className="search__select">
-                                        <>
-                                            <option value="All categories" onClick={() => chooseSearchedCategory(null)}>All categories</option>
-                                            {categories.map((category, index) => { return (
-                                                <option 
-                                                    key={`${category}_${index}`} 
-                                                    value={category} 
-                                                    onClick={() => chooseSearchedCategory(category)}
-                                                >{category}</option>
-                                            )})}
-                                        </>
+                                        <option value="All categories" onClick={() => chooseSearchedCategory(null)}>All categories</option>
+                                        {categories.map((category, index) => { return (
+                                            <option 
+                                                key={`${category}_${index}`} 
+                                                value={category} 
+                                                onClick={() => chooseSearchedCategory(category)}
+                                            >{category}</option>
+                                        )})}
                                     </select>
                                     <input 
                                         type="text"
@@ -125,7 +123,7 @@ export default function Layout({ categories }:Props) {
                                     </button>
                                 </form>
                                 <div className="search__results">
-                                    
+
                                 </div>
                             </div>
                         </div>

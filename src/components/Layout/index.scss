@@ -150,6 +150,13 @@
         background: #F9F9F9;
         // transform: scale(1.05);
     }
+    &__results {
+        position: absolute;
+        top: 0px;
+        background: #000;
+        height: 400px;
+        overflow-y: auto;
+    }
 }
 
 
