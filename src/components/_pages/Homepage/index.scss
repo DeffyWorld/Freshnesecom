@@ -1,6 +1,6 @@
 .best-selling {
     min-height: 332px;
-    margin-top: 80px;
+    margin-top: 60px;
     background: #FFFFFF;
 
     &__title {
@@ -34,7 +34,7 @@
         font-weight: 600;
         font-size: 1.13em;
         color: #151515;
-        margin-top: 130px;
+        margin-top: 80px;
     }
 }
 
@@ -45,6 +45,10 @@
     min-height: 596px;
     background: #FFFFFF;
 
+    &-header {
+        display: flex;
+        justify-content: space-between;
+    }
     &__title {
         font-family: 'Poppins';
         font-weight: 600;
@@ -53,10 +57,11 @@
     }
     &__button {
         display: flex;
-        align-items: center;
+        align-items: end;
         margin-top: 3px;
         margin-left: 58px;
         transition: all 250ms ease;
+
         div {
             font-weight: 700;
             font-size: 1em;
@@ -180,3 +185,53 @@
         }
     }
 }
+
+
+
+
+
+//Breakpoints
+
+// xxl
+@media (min-width: 1401px) {}
+
+// xl
+@media (max-width: 1400px) {}
+
+// lg
+@media (max-width: 1200px) {
+    .best-selling {
+        &__title {
+            margin-right: 20px;
+            white-space: nowrap;
+        }
+        &__list {
+            display: none;
+        }
+    }
+
+    .mini-blog-main__text-wrapper {
+        margin-top: -155px;
+    }
+}
+
+// md
+@media (max-width: 992px) {
+    // .mini-blog-additional {
+    //     flex-direction: row;
+    // }
+}
+
+// sm
+@media (max-width: 768px) {}
+
+// none
+@media (max-width: 576px) {
+    .best-selling__title {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+// exsm
+@media (max-width: 380px) {}

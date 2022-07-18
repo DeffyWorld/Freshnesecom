@@ -12,6 +12,8 @@ import ReactPaginate from "react-paginate";
 
 import ProductItem from "../../ProductItem/ProductItem";
 
+
+
 type Props = {
     categories: Categories[];
 };

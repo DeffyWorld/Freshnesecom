@@ -7,6 +7,17 @@
 
 
 // Style
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #D1D1D1;
+    border-radius: 26px;
+    border: 3px solid #D1D1D1;
+    cursor: pointer;
+}
+
 .active {
     opacity: 0.4;
     pointer-events: none

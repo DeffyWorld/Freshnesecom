@@ -51,7 +51,7 @@ export interface ShoppingCartState {
 // SearchValue
 export interface SearchValueState {
     searchValue: string;
-    searchedCategory: Categories | null;
+    searchedCategory: string;
 }
 
 

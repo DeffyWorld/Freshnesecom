@@ -19,20 +19,19 @@ export default function Slider() {
             },
             loop: true,
             freeMode: true,
-            // breakpoints: {
-            //     640: {
-            //       slidesPerView: 2,
-            //       spaceBetween: 20,
-            //     },
-            //     768: {
-            //       slidesPerView: 4,
-            //       spaceBetween: 40,
-            //     },
-            //     1024: {
-            //       slidesPerView: 5,
-            //       spaceBetween: 50,
-            //     },
-            // },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                },
+                576: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                },
+                992: {
+                    slidesPerView: 3,
+                },
+            },
         });
     }, [])
 

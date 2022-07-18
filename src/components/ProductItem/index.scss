@@ -8,6 +8,7 @@
     
     &--grid {
         min-height: 332px;
+        width: 268px;
         padding: 16px;
     }
     &--list {
@@ -203,9 +204,6 @@
         font-size: 17px;
         color: #151515;
     }
-    &__rating {
-
-    }
 }
 .price-wrapper {
     display: flex;
@@ -261,8 +259,12 @@
             border: 0.5px solid #D1D1D1;
             transform: rotate(90deg);
         }
-        &__text {
-
-        }
     }
+}
+
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

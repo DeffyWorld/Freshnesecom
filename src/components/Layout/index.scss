@@ -72,6 +72,7 @@
         display: flex;
         justify-content: flex-end;
         margin-top: 7px;
+        position: relative;
 
         &__user {
             margin-right: 2.5em;
@@ -110,6 +111,7 @@
 .search {
     margin: auto;
     position: relative;
+    z-index: 900;
     min-height: 42px;
 
     &__form {
@@ -157,6 +159,30 @@
         height: 400px;
         overflow-y: auto;
     }
+
+    &__results {
+        height: 320px;
+        width: 100%;
+        position: absolute;
+        top: 45px;
+        z-index: 900;
+        background: #F9F9F9;
+        border: 1px solid #D1D1D1;
+        border-radius: 12px;
+
+        &--hidden {
+            display: none;
+        }
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: #D1D1D1;
+            border-radius: 12px;
+            border: 3px solid #D1D1D1;
+        }
+    }
 }
 
 
@@ -167,12 +193,14 @@
     &__wrapper {
         display: flex;
         justify-content: space-evenly;
-        padding-top: 13px;
+        padding: 13px;
+        flex-wrap: wrap;
     }
     &__item {
         font-family: 'Poppins';
         font-weight: 500;
         font-size: 1em;
+        margin: 0px 3px 0px 3px;
         color: #151515;
         cursor: pointer;
         transition: all 250ms ease;
@@ -204,7 +232,7 @@
                     font-family: 'Open Sans';
                     font-weight: 400;
                     font-size: 0.9em;
-                    color: #6A983C;
+                    color: #A9A9A9;
                 }
             }
         }
@@ -220,3 +248,170 @@
         color: #151515;
     }
 }
+
+
+.searchedItem {
+    height: 80px;
+    padding: 5px;
+    display: flex;
+    position: relative;
+    
+    &__img {
+        width: 75px;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        border-radius: 12px;
+        margin-right: 10px;
+
+        img {
+            max-width: none;
+            min-width: auto;
+            min-height: auto;
+            height: 100%;
+            position: absolute;
+        }
+    }
+    &__title {
+        font-family: 'Poppins';
+        font-weight: 500;
+        font-size: 1em;
+        color: #151515;
+    }
+    &__description {
+        font-family: 'Open Sans';
+        font-weight: 400;
+        font-size: 0.75em;
+        color: #575757;
+        margin-top: -3px;
+    }
+    &__price {
+        font-family: 'Poppins';
+        font-weight: 600;
+        font-size: 1.15em;
+        color: #151515;
+        white-space: nowrap;
+
+        &-wrapper {
+            position: absolute;
+            left: 80%;
+        }
+        &--without-discount {
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-size: 0.75em;
+            text-decoration-line: line-through;
+            color: #A9A9A9;
+            margin-top: -3px;
+        }
+    }
+}
+
+
+.search-brightness {
+    background: rgba(0,0,0,.2);
+    transition: all 500ms ease;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 400;
+
+    &--hidden {
+        background: rgba(0,0,0,0);
+    }
+}
+
+
+
+
+
+//Breakpoints
+
+// xxl
+@media (min-width: 1401px) {}
+
+// xl
+@media (max-width: 1400px) {}
+
+// lg
+@media (max-width: 1200px) {
+    .search__input {
+        width: 100%;
+        border-left: none;
+        margin-left: 0em;
+        padding-left: 0.8em;
+        border-radius: 16px;
+    }
+}
+
+// md
+@media (max-width: 992px) {
+    .search {
+        display: none;
+    }
+    .header {
+        min-height: 100px; 
+    }
+    .footer {
+        margin-top: 84px;
+    }
+}
+// sm
+@media (max-width: 768px) {
+    .pre-header {
+        display: none;
+    }
+
+    .categories {
+        min-height: 40px;
+        padding: 5px;
+        &__wrapper {
+            padding: 8px;
+            width: 100vw;
+        }
+        &__item {
+            font-size: 0.9em;
+        }
+    }
+
+    .footer {
+        &-seo {
+            &-item {
+                &__title {
+                    margin-top: 10px;
+                    text-align: center;
+                }
+                &__list {
+                    &-item {
+                        margin-top: 8px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    
+        &__copyright {
+            margin-top: 42px;
+        }
+    }
+}
+
+// none
+@media (max-width: 576px) {
+    .header {
+        font-size: 0.9rem;
+        min-height: 90px; 
+
+        &-icons__user {
+            margin-right: 1.5em;
+        }
+    }
+}
+
+// exsm
+@media (max-width: 380px) {}

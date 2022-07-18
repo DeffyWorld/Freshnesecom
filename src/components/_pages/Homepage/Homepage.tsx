@@ -4,7 +4,9 @@ import './index.scss'
 import { ChevronRightAlt } from '../../../assets/svg/_Icons';
 
 import { Categories, View } from '../../../redux/_types';
-import { useAppSelector } from '../../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
+
+import { setChooseCategory } from '../../../redux/slices/chooseCategory';
 
 import { Link } from 'react-router-dom';
 
@@ -13,12 +15,20 @@ import Slider from '../../Slider/Slider';
 
 
 
+
 type Props = {
     categories: Categories[];
 }
 
 export default function Homepage({ categories }:Props) {
+	const dispatch = useAppDispatch();
+
 	const {productsResponse, status} = useAppSelector(state => state.products);
+
+
+	function chooseCategory(categorie: Categories): void {
+		dispatch(setChooseCategory(categorie));
+	}
 
 
     return (
@@ -26,19 +36,21 @@ export default function Homepage({ categories }:Props) {
 			<section className="best-selling">
 				<div className="container">
 					<div className="row">
-						<div className="col-3">
+						<div className="col-12 col-xl-3 d-flex d-xl-block">
 							<div className="best-selling__title">Best selling products</div>
 							<ul className="best-selling__list">
-								<Link to='/' ><li className="best-selling__list-item">{Categories.bakery}</li></Link>
-								<Link to='/' ><li className="best-selling__list-item">{Categories.drinks}</li></Link>
-								<Link to='/' ><li className="best-selling__list-item">{Categories.meatAndFish}</li></Link>
-								<Link to='/' ><li className="best-selling__list-item">{Categories.fruitsAndVegetables}</li></Link>
-								<Link to='/' ><li className="best-selling__list-item">{Categories.pharmacy}</li></Link>
+								{categories.map((categorie, index) => {return (
+									<Link to='/category' key={`${categorie}_${index}`} >
+										<div onClick={() => chooseCategory(categorie)} className="best-selling__list-item">
+											{categorie}
+										</div>
+									</Link>
+								)})}
 							</ul>
 						</div>
-						<div className="col-9">
+						<div className="col-12 col-xl-9">
 							<div className="container">
-								<div className="row">
+								<div className="row mt-5 mt-xl-0 d-flex d-sm-none d-lg-flex">
 									<ProductItem view={View.Grid} productsItem={productsResponse[1]} status={status} />
 									<ProductItem view={View.Grid} productsItem={productsResponse[4]} status={status} />
 									<ProductItem view={View.Grid} productsItem={productsResponse[10]} status={status} />
@@ -46,6 +58,11 @@ export default function Homepage({ categories }:Props) {
 							</div>
 						</div>
 					</div>
+				</div>
+				<div className="row mt-4 mt-xl-0 d-none d-sm-flex d-lg-none">
+					<ProductItem view={View.List} productsItem={productsResponse[1]} status={status} />
+					<ProductItem view={View.List} productsItem={productsResponse[4]} status={status} />
+					<ProductItem view={View.List} productsItem={productsResponse[10]} status={status} />
 				</div>
 			</section>
 
@@ -59,19 +76,17 @@ export default function Homepage({ categories }:Props) {
 			<section className="mini-blog">
 				<div className="container">
 					<div className="row">
-						<div className="col-6">
-							<div className="mini-blog__title">Read our Blog posts</div>
-						</div>
-						<div className="col-2 offset-4">
-							<Link to='/blog' >
+						<div className="col-12">
+							<div className="mini-blog-header">
+								<div className="mini-blog__title">Read our Blog posts</div>
 								<div className="mini-blog__button">
 									<div>Go to Blog</div><ChevronRightAlt/>
 								</div>
-							</Link>
+							</div>
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-5">
+						<div className="col-12 col-md-12 col-lg-5">
 							<div className="mini-blog-main">
 								<div className="mini-blog-main__img"></div>
 								<div className="mini-blog-main__gradient"></div>
@@ -86,7 +101,7 @@ export default function Homepage({ categories }:Props) {
 								</div>
 							</div>
 						</div>
-						<div className="col-3">
+						<div className="d-none col-md-5 col-lg-3">
 							<div className="mini-blog-secondary">
 								<div className="mini-blog-secondary__img"></div>
 								<div className="mini-blog-secondary__title">
@@ -98,7 +113,7 @@ export default function Homepage({ categories }:Props) {
 								</div>
 							</div>
 						</div>
-						<div className="col-4">
+						<div className="col-12 col-md-7 col-lg-4">
 							<div className="mini-blog-additional">
 								<div className="mini-blog-additional__wrapper">
 									<div className="mini-blog-additional__title">Salat is kinda good start to your morning routines</div>

@@ -47,7 +47,7 @@ export default function ProductItem({ view, status, productsItem }: Props) {
 
     return status === Status.SUCCESS ? (
         view === View.Grid ? (
-            <div className="col-4">
+            <div className="col-12 col-sm-4 flex"> 
                 <div className="product-item product-item--grid">
                     {productsItem.discount && (
                         <div className="product-item__discount">

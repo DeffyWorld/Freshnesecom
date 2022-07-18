@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Categories, SearchValueState } from "../_types";
+import { SearchValueState } from "../_types";
 
 
 const initialState: SearchValueState = {
     searchValue: '',
-    searchedCategory: null
+    searchedCategory: 'All categories'
 }
 export const searchValueSlice = createSlice ({
     name: 'searchValue',
@@ -13,7 +13,7 @@ export const searchValueSlice = createSlice ({
         setSearchValue(state: SearchValueState, action: PayloadAction<string>):void {
             state.searchValue = action.payload;
         },
-        setSearchedCategory(state: SearchValueState, action: PayloadAction<Categories | null>):void {
+        setSearchedCategory(state: SearchValueState, action: PayloadAction<string>):void {
             state.searchedCategory = action.payload;
         }
     }
