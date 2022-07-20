@@ -101,7 +101,7 @@ export default function Homepage({ categories }:Props) {
 								</div>
 							</div>
 						</div>
-						<div className="d-none col-md-5 col-lg-3">
+						<div className="d-none d-md-block col-md-5 col-lg-3">
 							<div className="mini-blog-secondary">
 								<div className="mini-blog-secondary__img"></div>
 								<div className="mini-blog-secondary__title">

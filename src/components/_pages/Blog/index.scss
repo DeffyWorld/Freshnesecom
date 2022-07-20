@@ -3,16 +3,26 @@
     background: #FFFFFF;
 
     &__title {
+        margin-top: 60px;
         font-family: 'Poppins';
         font-weight: 600;
         font-size: 2em;
         color: #151515;
-        margin-top: 60px;
-        margin-bottom: 20px;
+        white-space: nowrap;
     }
+
+    &__hamburger {
+        position: absolute;
+        z-index: 999;
+        top: 30px;
+        right: 100px;
+        // left: 0px;
+    }
+
 
     &-item {
         min-height: 400px;
+        margin-top: 30px;
 
         &__img {
             background-image: url(../../../assets/img/joseph-gonzalez.jpg);
@@ -50,6 +60,7 @@
 .content {
     margin-top: 20px;
     margin-bottom: 140px;
+    position: relative;
 
     &__list {
         &-title {
@@ -138,5 +149,73 @@
             margin-top: 25px;
             margin-bottom: 8px;
         }
+    }
+}
+
+
+.sidebar {
+    position: absolute;
+    width: 304px;
+    height: 626px;
+    background-color: #F9F9F9;
+    z-index: 900;
+    transition: all 300ms ease;
+    border-radius: 12px;
+
+    &--hidden {
+        transform: translateX(-400px);
+    }
+}
+
+
+
+
+
+//Breakpoints
+
+// xxl
+@media (min-width: 1401px) {}
+
+// xl
+@media (max-width: 1400px) {}
+
+// lg
+@media (max-width: 1200px) {
+    .blog-main-item__wrapper {
+        margin-top: -150px;
+    }
+}
+
+// md
+@media (max-width: 992px) {
+    .blog-main-item__wrapper {
+        margin-top: -120px;
+    }
+}
+
+// sm
+@media (max-width: 768px) {
+    .blog-main {
+        &__title {
+            font-weight: 600;
+            font-size: 1.9em;
+        }
+        &__hamburger {
+            margin-top: 10px;
+        }
+    }
+}
+
+// none
+@media (max-width: 530px) {
+    .blog-main-item__wrapper {
+        margin-top: -150px;
+    }
+}
+
+// exsm
+@media (max-width: 410px) {
+    .blog-main-item__wrapper {
+        margin-top: -190px;
     }
 }
