@@ -18,9 +18,13 @@ export default function Cart() {
     let sum = 0;
     idArray.forEach(id => {
         cart.forEach(product => {
-            id === product.id 
-                ? sum = sum + product.price
-                : sum = sum;
+            product.discount === null 
+                ? id === product.id 
+                    ? sum = sum + product.price
+                    : sum = sum
+                : id === product.id 
+                    ? sum = sum + product.price * (1 - product.discount)
+                    : sum = sum;
         })
     })
     

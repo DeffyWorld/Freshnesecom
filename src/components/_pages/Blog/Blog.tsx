@@ -107,7 +107,7 @@ export default function Blog() {
 							</div>
 						</div>
 
-						<div className={isSidebarActive ? 'sidebar' : 'sidebar sidebar--hidden'}>
+						<div className={isSidebarActive ? 'sidebar d-block d-xl-none' : 'sidebar sidebar--hidden d-block d-xl-none'}>
 							<h2 className="content__list-title">Archives</h2>
 							<ul className="content__list">
 								<li className="content__list-item">March 2020</li>

@@ -47,7 +47,7 @@ export default function ProductItem({ view, status, productsItem }: Props) {
 
     return status === Status.SUCCESS ? (
         view === View.Grid ? (
-            <div className="col-12 col-sm-4 flex"> 
+            <div className="col-12 col-sm-6 col-lg-4 flex"> 
                 <div className="product-item product-item--grid">
                     {productsItem.discount && (
                         <div className="product-item__discount">
@@ -68,7 +68,7 @@ export default function ProductItem({ view, status, productsItem }: Props) {
                             ) : (
                                 <>
                                     <div className="product-item-price__price">
-                                        {+productsItem.price % 10 === 0 ? productsItem.price : +productsItem.price.toFixed(2) * productsItem.discount} USD
+                                        {+productsItem.price % 10 === 0 ? productsItem.price * (1 - productsItem.discount) : +productsItem.price.toFixed(2) * (1 - productsItem.discount)} USD
                                     </div>
                                     <div className="product-item-price__price--without-discount">
                                         {productsItem.price % 10 === 0 ? productsItem.price : productsItem.price.toFixed(2)} USD
@@ -117,7 +117,7 @@ export default function ProductItem({ view, status, productsItem }: Props) {
                                     ) : (
                                         <>
                                             <div className="product-item-price__price">
-                                                {+productsItem.price % 10 === 0 ? productsItem.price : +productsItem.price.toFixed(2) * productsItem.discount} USD
+                                                {+productsItem.price % 10 === 0 ? productsItem.price * (1 - productsItem.discount) : +productsItem.price.toFixed(2) * (1 - productsItem.discount)} USD
                                             </div>
                                             <div className="product-item-price__price--without-discount">
                                                 {productsItem.price % 10 === 0 ? productsItem.price : productsItem.price.toFixed(2)} USD
@@ -162,10 +162,10 @@ export default function ProductItem({ view, status, productsItem }: Props) {
                                 </div>
                             ) : (
                                 <>
-                                    <div className="price-wrapper-price__price">
-                                        {+productsItem.price % 10 === 0 ? productsItem.price : +productsItem.price.toFixed(2) * productsItem.discount} USD
+                                    <div className="product-item-price__price">
+                                        {+productsItem.price % 10 === 0 ? productsItem.price * (1 - productsItem.discount) : +productsItem.price.toFixed(2) * (1 - productsItem.discount)} USD
                                     </div>
-                                    <div className="price-wrapper-price__price--without-discount">
+                                    <div className="product-item-price__price--without-discount">
                                         {productsItem.price % 10 === 0 ? productsItem.price : productsItem.price.toFixed(2)} USD
                                     </div>
                                 </>

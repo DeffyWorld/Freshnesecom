@@ -79,9 +79,11 @@ export default function Homepage({ categories }:Props) {
 						<div className="col-12">
 							<div className="mini-blog-header">
 								<div className="mini-blog__title">Read our Blog posts</div>
-								<div className="mini-blog__button">
-									<div>Go to Blog</div><ChevronRightAlt/>
-								</div>
+								<Link to={'/blog'} >
+									<div className="mini-blog__button">
+										<div>Go to Blog</div><ChevronRightAlt/>
+									</div>
+								</Link>
 							</div>
 						</div>
 					</div>

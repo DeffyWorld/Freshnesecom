@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "nouislider/distribute/nouislider.css";
+import 'hamburgers/_sass/hamburgers/hamburgers.scss'
 import "./index.scss";
 
 import { GridView, ListView, Star } from "../../../assets/svg/_Icons";
@@ -28,6 +29,8 @@ export default function Category({ categories }: Props) {
     const [minPrice, setMinPrice] = useState<number>(0);
     const [maxPrice, setMaxPrice] = useState<number>(999);
     const [priceFilter, setPriceFilter] = useState<number[]>([0, 999]);
+
+    const [isSidebarActive, setIsSidevarActive] = useState<boolean>(false);
 
     
     function setViewGrid(): void {
@@ -66,6 +69,10 @@ export default function Category({ categories }: Props) {
         setPriceFilter([0, 999]);
     }
 
+    function onHamburgerClick() {
+		setIsSidevarActive(!isSidebarActive);
+	}
+
 
     // Pagination
     const [currentItems, setCurrentItems] = useState<ProductsItem[]>(null!);
@@ -86,8 +93,6 @@ export default function Category({ categories }: Props) {
         setFilteredProductsLength(filteredProducts.length);
         setCurrentItems(filteredProducts.slice(itemOffset, endOffset));
         setPageCount(Math.ceil(filteredProducts.length / itemsPerPage));
-
-        console.log(checkedRating);
         
     }, [activeCategory, checkedRating, itemOffset, itemsPerPage, priceFilter, productsResponse]);
 
@@ -101,7 +106,7 @@ export default function Category({ categories }: Props) {
         <section className="category">
             <div className="container">
                 <div className="row">
-                    <div className="col-6">
+                    <div className="col-12 col-lg-6">
                         {activeCategory === null ? (
                             <h1 className="category__title">All categories</h1>
                         ) : (
@@ -111,7 +116,7 @@ export default function Category({ categories }: Props) {
                         )}
                     </div>
 
-                    <div className="col-6 ">
+                    <div className="col-12 col-lg-6">
                         <div className="category-params">
                             <button
                                 className={
@@ -155,7 +160,7 @@ export default function Category({ categories }: Props) {
                 <div className="category-main">
                     <div className="row">
                         <div className="col-3">
-                            <div className="side">
+                            <div className={isSidebarActive ? 'side' : 'side side--hidden'}>
                                 <div className="side-item">
                                     <h2 className="side-item__title">
                                         Categories
@@ -326,7 +331,7 @@ export default function Category({ categories }: Props) {
                             </div>
                         </div>
 
-                        <div className="col-9">
+                        <div className="d-none d-xl-block col-xl-9">
                             <div className="container">
                                 <div className="row">
                                     {currentItems && currentItems.map(
@@ -342,6 +347,29 @@ export default function Category({ categories }: Props) {
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className="row d-flex d-xl-none">
+                    <div className="category__hamburger d-flex d-xl-none">
+                        <button 
+                            className={isSidebarActive ? 'hamburger hamburger--collapse is-active' : 'hamburger hamburger--collapse'} 
+                            type="button"
+                            onClick={onHamburgerClick}
+                        >
+                            <span className="hamburger-box">
+                                <span className="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+
+                    {currentItems && currentItems.map(
+                        (product: ProductsItem,index: number) => {return (
+                            <ProductItem
+                                key={`${product}_${index}`}
+                                view={view}
+                                status={status}
+                                productsItem={product}
+                            />);
+                        })}
                 </div>
                 <div className="row">
                     <ReactPaginate
