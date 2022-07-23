@@ -8,7 +8,7 @@ import { ProductsState, Status } from '../_types'
 export const fetchProducts = createAsyncThunk<any, undefined, {rejectValue: string}>(
     'products/fetchProducts',
     async function(_, {rejectWithValue}) {
-        return await axios.get('http://localhost:3000/foodDb.json')
+        return await axios.get(`${window.location.origin}/foodDb.json`)
             .then(response => {
                 return response.data.products;
             })
