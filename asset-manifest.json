@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Freshnesecom/static/css/main.03e63d82.css",
-    "main.js": "/Freshnesecom/static/js/main.aea8249f.js",
+    "main.js": "/Freshnesecom/static/js/main.86222a28.js",
     "static/media/joseph-gonzalez.jpg": "/Freshnesecom/static/media/joseph-gonzalez.a1a9a49fdbc79879808d.jpg",
     "index.html": "/Freshnesecom/index.html",
     "static/media/ic-actions-multi-success.svg": "/Freshnesecom/static/media/ic-actions-multi-success.b4a3769babf28bce6ac1.svg",
     "main.03e63d82.css.map": "/Freshnesecom/static/css/main.03e63d82.css.map",
-    "main.aea8249f.js.map": "/Freshnesecom/static/js/main.aea8249f.js.map"
+    "main.86222a28.js.map": "/Freshnesecom/static/js/main.86222a28.js.map"
   },
   "entrypoints": [
     "static/css/main.03e63d82.css",
-    "static/js/main.aea8249f.js"
+    "static/js/main.86222a28.js"
   ]
 }
